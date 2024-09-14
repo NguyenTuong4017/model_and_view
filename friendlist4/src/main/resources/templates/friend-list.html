@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Friend List</title>
+  </head>
+  <body>
+    <h1>My friends</h1>
+    <h3>Name</h3>
+    <div th:each="friendList: ${friendList}">
+      <span th:text="${friendList.firstName}"></span>
+      <span th:text="${friendList.lastName}"></span>
+    </div>
+
+    <div>
+      <h1>Add new friend to list</h1>
+      <form th:action="@{/save}" th:object="${friend}" method="post">
+        <label for="firstName">
+          First Name:
+          <input type="text" th:field="*{firstName}" />
+        </label>
+
+        <label for="lastName">
+          Last Name:
+          <input type="text" th:field="*{lastName}" />
+        </label>
+
+        <button type="Submit">Add Friend</button>
+      </form>
+    </div>
+  </body>
+</html>

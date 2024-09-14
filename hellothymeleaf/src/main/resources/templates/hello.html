@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello Thymeleaf</title>
+  </head>
+  <body>
+    <div>
+      <p th:if="${age > 18}">Welcome <span th:text="${name}"></span>!</p>
+      <p th:if="${age < 18}">You are too young!</p>
+    </div>
+  </body>
+</html>
